@@ -53,7 +53,7 @@ assets/results_optical_depth.png
 -->
 
 | 光学-红外 | 光学-SAR |
-|:---:|:---:|
+|:---:|![光学-SAR匹配效果图](./assets/results_opt_sar.png)|
 | *效果图待补充* | *效果图待补充* |
 
 | 光学-地图 | 光学-深度 |
