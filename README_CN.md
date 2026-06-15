@@ -54,10 +54,7 @@ assets/results_optical_depth.png
 
 | 光学-红外 | 光学-SAR |
 |:---:|:---:|
-| *效果图待补充* | ![光学-SAR匹配效果图](./assets/results_opt_sar.png) |
-| *效果图待补充* |基准图: OSdataset/opt/10.png, 实时图: OSdataset/sar/10.png|
-| *效果图待补充* |模拟变换: 旋转15°, 尺度1.2倍, x方向透视收缩0.001, y方向透视收缩0.001|
-| *效果图待补充* |内点数 / 正确匹配点数: 125 / 125|
+| *效果图待补充* | ![光学-SAR匹配效果图](./assets/results_opt_sar.png)<br>基准图: OSdataset/opt/10.png, 实时图: OSdataset/sar/10.png<br>模拟变换: 旋转15°, 尺度1.2倍, x方向透视收缩0.001, y方向透视收缩0.001<br>内点数 / 正确匹配点数: 125 / 125 |
 
 | 光学-地图 | 光学-深度 |
 |:---:|:---:|
