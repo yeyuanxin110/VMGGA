@@ -1,4 +1,6 @@
-# VMGGA
+# VMGGA 
+
+🚧 This page is under recent updates and is currently incomplete.
 
 [English](README.md) | [简体中文](README_CN.md)
 
