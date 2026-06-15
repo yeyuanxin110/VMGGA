@@ -2,7 +2,7 @@
 
 🚧 This page is under recent updates and is currently incomplete.
 
-[English](README.md) | [简体中文](README_CN.md)
+[English](README.md) | [中文](README_CN.md)
 
 ## Robust Detector-Free Multimodal Image Matching Based on Visual Model Guidance and Gated Attention
 
@@ -60,7 +60,7 @@ assets/results_optical_depth.png
 
 | Optical-Infrared | Optical-SAR |
 |:---:|:---:|
-| *Figure coming soon* | *Figure coming soon* |
+| ![Optical-infrared matching result](assets/result_opt_inf_1.png)<br>Reference image: RoadScene/inf/FLIR_05027.jpg<br>Sensed image: RoadScene/opt/FLIR_05027.jpg<br>Simulated transformation: rotation -30 degrees<br>Inliers / correct matches: 420 / 422 | ![Optical-SAR matching result](assets/result_opt_sar_2.png)<br>Reference image: OSdataset/opt/10.png<br>Sensed image: OSdataset/sar/10.png<br>Simulated transformation: rotation 15 degrees, scale 1.2, x-perspective contraction 0.001, y-perspective contraction 0.001<br>Inliers / correct matches: 125 / 125 |
 
 | Optical-Map | Optical-Depth |
 |:---:|:---:|
@@ -194,5 +194,5 @@ see `LICENSES/DINOv3_LICENSE.md`.
 
 ## Contact
 
-- Tengfeng Tang: `ttf@my.swjtu.edu.cn`
-- Yuanxin Ye: `yeyuanxin@home.swjtu.edu.cn`
+- Tengfeng Tang (First Author): `ttf@my.swjtu.edu.cn`
+- Prof. Yuanxin Ye (Corresponding Author): `yeyuanxin@home.swjtu.edu.cn`

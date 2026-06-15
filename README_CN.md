@@ -2,7 +2,7 @@
 
 🚧 此页面正在近期更新中，目前尚不完整。
 
-[English](README.md) | [简体中文](README_CN.md)
+[English](README.md) | [中文](README_CN.md)
 
 ## 基于视觉模型引导与门控注意力的鲁棒无检测器多模态图像匹配
 
@@ -14,7 +14,7 @@
 本仓库是论文 **VMGGA** 的官方实现。论文发表于
 *ISPRS Journal of Photogrammetry and Remote Sensing*。
 
-**Tengfeng Tang, Zhiqiang Han, Tao Peng, Jinhao Chen, Yuanxin Ye**
+**唐腾峰，韩志强，彭韬，陈锦昊，叶沅鑫**
 
 [[论文]](https://doi.org/10.1016/j.isprsjprs.2026.05.005)
 [[权重：Google Drive（待更新）]](#模型权重)
@@ -54,9 +54,9 @@ assets/results_optical_map.png
 assets/results_optical_depth.png
 -->
 
-| 光学-红外 | 光学-SAR |
-|:---:|:---:|
-| *效果图待补充* | ![光学-SAR匹配效果图](./assets/results_opt_sar.png)<br>基准图: OSdataset/opt/10.png, 实时图: OSdataset/sar/10.png<br>模拟变换: 旋转15°, 尺度1.2倍, x方向透视收缩0.001, y方向透视收缩0.001<br>内点数 / 正确匹配点数: 125 / 125 |
+|                                                                              光学-红外                                                                              | 光学-SAR |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---:|
+| ![光学-红外匹配效果图](assets/result_opt_inf_1.png)<br>基准图: RoadScene/inf/FLIR_05027.jpg<br>实时图: RoadScene/opt/FLIR_05027.jpg<br>模拟变换: 旋转-30°<br>内点数 / 正确匹配点数: 420 / 422 | ![光学-SAR匹配效果图](assets/result_opt_sar_2.png)<br>基准图: OSdataset/opt/10.png<br>实时图: OSdataset/sar/10.png<br>模拟变换: 旋转15°, 尺度1.2倍, x方向透视收缩0.001, y方向透视收缩0.001<br>内点数 / 正确匹配点数: 125 / 125 |
 
 | 光学-地图 | 光学-深度 |
 |:---:|:---:|
@@ -188,5 +188,5 @@ DINOv3 衍生的文件仍受 DINOv3 License 约束，详见
 
 ## 联系方式
 
-- Tengfeng Tang：`ttf@my.swjtu.edu.cn`
-- Yuanxin Ye：`yeyuanxin@home.swjtu.edu.cn`
+- 唐腾峰（第一作者）: `ttf@my.swjtu.edu.cn`
+- 叶沅鑫 教授（通讯作者）：`yeyuanxin@home.swjtu.edu.cn`
