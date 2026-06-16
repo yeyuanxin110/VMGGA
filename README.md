@@ -17,8 +17,6 @@ Photogrammetry and Remote Sensing*.
 **Tengfeng Tang, Zhiqiang Han, Tao Peng, Jinhao Chen, and Yuanxin Ye**
 
 [[Paper]](https://doi.org/10.1016/j.isprsjprs.2026.05.005)
-[[Weights: Google Drive (TBA)]](#model-zoo)
-[[Weights: Baidu Netdisk (TBA)]](#model-zoo)
 
 <!--
 Add assets/teaser.png and uncomment the following block.
@@ -58,9 +56,9 @@ assets/results_optical_map.png
 assets/results_optical_depth.png
 -->
 
-| Optical-Infrared | Optical-SAR |
-|:---:|:---:|
-| ![Optical-infrared matching result](assets/result_opt_inf_1.png)<br>Reference image: RoadScene/inf/FLIR_05027.jpg<br>Sensed image: RoadScene/opt/FLIR_05027.jpg<br>Simulated transformation: rotation -30 degrees<br>Inliers / correct matches: 420 / 422 | ![Optical-SAR matching result](assets/result_opt_sar_2.png)<br>Reference image: OSdataset/opt/10.png<br>Sensed image: OSdataset/sar/10.png<br>Simulated transformation: rotation 15 degrees, scale 1.2, x-perspective contraction 0.001, y-perspective contraction 0.001<br>Inliers / correct matches: 125 / 125 |
+|                                                                                                                     Optical-Infrared                                                                                                                      | Optical-SAR |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---:|
+| ![Optical-infrared matching result](assets/result_opt_inf_1.png)<br>Reference image: RoadScene/inf/FLIR_05027.jpg<br>Sensed image: RoadScene/opt/FLIR_05027.jpg<br>Simulated transformation: rotation -30 degrees<br>Inliers / correct matches: 422 / 420 | ![Optical-SAR matching result](assets/result_opt_sar_2.png)<br>Reference image: OSdataset/opt/10.png<br>Sensed image: OSdataset/sar/10.png<br>Simulated transformation: rotation 15 degrees, scale 1.2, x-perspective contraction 0.001, y-perspective contraction 0.001<br>Inliers / correct matches: 125 / 125 |
 
 | Optical-Map | Optical-Depth |
 |:---:|:---:|
@@ -78,6 +76,15 @@ DINOv3 initialization checkpoint is not required for inference.
 | Optical-SAR | `vmgga_optical_sar.pth` | TBA | TBA |
 | Optical-Map | `vmgga_optical_map.pth` | TBA | TBA |
 | Optical-Depth | `vmgga_optical_depth.pth` | TBA | TBA |
+
+## Dataset
+
+The self-made Optical-Map dataset used in the paper will be provided through
+external cloud storage links.
+
+| Dataset | Description                                        | Google Drive | Baidu Netdisk |
+|---|----------------------------------------------------|---|---|
+| Optical-Map | Optical satellite image and raster map image pairs | TBA | TBA |
 
 ## Installation
 
@@ -101,7 +108,20 @@ OpenCV 4.12.0, einops 0.8.1, Kornia 0.8.1, and pydegensac.
 
 ## Demo
 
-Place a sample pair under the selected modality directory:
+Choose a modality in `demo_vmgga.py`, place the corresponding checkpoint and
+example images, then run the demo directly. The script automatically uses the
+prepared matching setup for the selected modality.
+
+Available modalities:
+
+```text
+optical_infrared
+optical_sar
+optical_map
+optical_depth
+```
+
+Place a sample pair under the selected modality directory, for example:
 
 ```text
 examples/optical_sar/
@@ -109,10 +129,9 @@ examples/optical_sar/
 └── image1.png
 ```
 
-Edit the configuration block in `main()`:
+Edit the modality in `demo_vmgga.py`:
 
 ```python
-mode = 3
 modality = "optical_sar"
 ```
 
@@ -124,35 +143,6 @@ python demo_vmgga.py
 
 The visualization is saved to `demo_result/<modality>_matches.png`.
 
-### Demo Modes
-
-| Mode | Input | Geometric verification |
-|---|---|---|
-| `1` | Pre-aligned pair plus simulated rotation, scale, and perspective parameters | Yes |
-| `2` | Unaligned pair plus a known 3x3 homography label | Yes |
-| `3` | Any two input images without a geometric label | No |
-
-For mode 1, edit:
-
-```python
-mode_options = {
-    "rotate": 15,
-    "scale": 1.2,
-    "homography_x": 0.0,
-    "homography_y": 0.0,
-}
-```
-
-For mode 2, provide `examples/<modality>/homography.txt`. The matrix must map
-coordinates from `image0` to `image1`. Set `invert_homography_label=True` when
-the stored matrix has the opposite direction. Text, CSV, NPY, and NPZ formats
-are supported.
-
-For modes 1 and 2, green lines indicate correct matches and red lines indicate
-matches exceeding the configured reprojection threshold. For mode 3, all
-RANSAC inliers are shown in green because no ground-truth homography is
-available. Yellow circles mark the matched points.
-
 ## Repository Structure
 
 ```text
@@ -161,7 +151,7 @@ VMGGA/
 ├── examples/               # Sample pairs for four modalities
 ├── LICENSES/               # Third-party license files
 ├── src/
-│   ├── config/             # Inference model configuration
+│   ├── config/             # Model setup
 │   ├── utils/              # Image transformation utilities
 │   └── vmgga/              # VMGGA network
 ├── weights/                # Downloaded checkpoints (not tracked by Git)
