@@ -1,0 +1,6 @@
+numpy>=1.24
+opencv-python>=4.8
+einops>=0.7
+kornia>=0.7
+pydegensac>=0.1.2
+PyYAML>=6.0

@@ -12,11 +12,11 @@
 ![Modalities](https://img.shields.io/badge/Modalities-4-2ea44f)
 
 Official implementation of **VMGGA**, published in *ISPRS Journal of
-Photogrammetry and Remote Sensing*.
+Photogrammetry and Remote Sensing*. [[Paper Link]](https://doi.org/10.1016/j.isprsjprs.2026.05.005)
 
 **Tengfeng Tang, Zhiqiang Han, Tao Peng, Jinhao Chen, and Yuanxin Ye**
 
-[[Paper]](https://doi.org/10.1016/j.isprsjprs.2026.05.005)
+
 
 <!--
 Add assets/teaser.png and uncomment the following block.
@@ -62,11 +62,11 @@ assets/results_optical_depth.png
 
 | Optical-Map | Optical-Depth |
 |:---:|:---:|
-| *Figure coming soon* | *Figure coming soon* |
+| ![Optical-map matching result](assets/result_opt_map.png)<br>Reference image: VMGGA-Opt-Map/map/109747_53549.jpg<br>Sensed image: VMGGA-Opt-Map/opt/109747_53549.jpg<br>Simulated transformation: rotation -15 degrees, scale 1.1<br>Inliers / correct matches: 216 / 203 | ![Optical-depth matching result](assets/result_opt_dep_1.png)<br>Reference image: NYU-DEPTH-V2/depth/1340.jpg<br>Sensed image: NYU-DEPTH-V2/opt/1340.jpg<br>Simulated transformation: rotation 10 degrees, scale 1.1, x-perspective contraction 1e-5<br>Inliers / correct matches: 230 / 227 |
 
 ## Model Zoo
 
-Download a checkpoint and place it in `weights/` using the filename below.
+Download a checkpoint and place it in `weight/` using the filename below.
 Each VMGGA checkpoint contains the complete inference model state; a separate
 DINOv3 initialization checkpoint is not required for inference.
 
@@ -79,12 +79,12 @@ DINOv3 initialization checkpoint is not required for inference.
 
 ## Dataset
 
-The self-made Optical-Map dataset used in the paper will be provided through
+The self-made VMGGA-Opt-Map dataset used in the paper will be provided through
 external cloud storage links.
 
 | Dataset | Description                                        | Google Drive | Baidu Netdisk |
 |---|----------------------------------------------------|---|---|
-| Optical-Map | Optical satellite image and raster map image pairs | TBA | TBA |
+| VMGGA-Opt-Map | Optical satellite image and raster map image pairs | TBA | TBA |
 
 ## Installation
 
@@ -108,31 +108,53 @@ OpenCV 4.12.0, einops 0.8.1, Kornia 0.8.1, and pydegensac.
 
 ## Demo
 
-Choose a modality in `demo_vmgga.py`, place the corresponding checkpoint and
-example images, then run the demo directly. The script automatically uses the
-prepared matching setup for the selected modality.
+We provide built-in example image pairs so you can try VMGGA in 3 steps:
 
-Available modalities:
+**Step 1 — Download a checkpoint**
 
-```text
-optical_infrared
-optical_sar
-optical_map
-optical_depth
-```
+Pick the modality you want to try, download the corresponding `.pth` file
+from the Model Zoo above, and place it in `weight/`.
 
-Place a sample pair under the selected modality directory, for example:
+**Step 2 — (Optional) Prepare your own images**
+
+If you want to use your own images, place them under the modality example
+directory. For instance, for optical-SAR:
 
 ```text
 examples/optical_sar/
-├── image0.png
-└── image1.png
+├── image0.png          # reference image
+└── image1.png          # sensed image
 ```
 
-Edit the modality in `demo_vmgga.py`:
+> If you skip this step, the built-in example pair is used automatically.
+
+**Step 3 — Set modality and run**
+
+Open `demo_vmgga.py` and go to the `main()` function. Fill in the required
+parameters at the top:
 
 ```python
-modality = "optical_sar"
+# =====================================================================
+#  必填 / REQUIRED
+# =====================================================================
+modality = "optical_sar"                               # ← choose your modality
+
+image0 = "examples/optical_sar/image0.png"             # ← reference image
+image1 = "examples/optical_sar/image1.png"             # ← sensed image
+
+mode = 1                                               # ← matching mode
+
+if mode == 1:
+    # ── Mode 1 parameters (required) ──
+    rotate = 15         # rotation angle (degrees)
+    scale = 1.2         # scale factor
+    homography_x = 0.0  # perspective contraction x
+    homography_y = 0.0  # perspective contraction y
+
+elif mode == 2:
+    # ── Mode 2 parameters (required) ──
+    homography_label = "examples/optical_sar/homography.txt"  # label file path
+    invert_label = False                                      # invert direction
 ```
 
 Then run:
@@ -141,7 +163,15 @@ Then run:
 python demo_vmgga.py
 ```
 
-The visualization is saved to `demo_result/<modality>_matches.png`.
+The result is saved to `demo_result/<modality>_matches.png`.
+
+**Which mode should I use?**
+
+| Mode | When to use |
+|------|-------------|
+| `1` (default) | Your image pair is roughly aligned. The script applies synthetic rotation, scale, and perspective perturbations automatically. Accuracy is reported against the known ground truth. |
+| `2` | Your image pair is unaligned and you have a homography label file (`.npy`, `.npz`, `.txt`, or `.csv`). Set `homography_label` to your file path. |
+| `3` | You just want to see the matches between two images. No accuracy metric is computed — all RANSAC inliers are drawn in green. |
 
 ## Repository Structure
 
@@ -154,7 +184,7 @@ VMGGA/
 │   ├── config/             # Model setup
 │   ├── utils/              # Image transformation utilities
 │   └── vmgga/              # VMGGA network
-├── weights/                # Downloaded checkpoints (not tracked by Git)
+├── weight/                # Downloaded checkpoints (not tracked by Git)
 ├── demo_vmgga.py
 ├── requirements.txt
 └── README.md

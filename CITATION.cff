@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use VMGGA in your research, please cite the paper below."
+title: "VMGGA"
+type: software
+authors:
+  - family-names: Tang
+    given-names: Tengfeng
+  - family-names: Han
+    given-names: Zhiqiang
+  - family-names: Peng
+    given-names: Tao
+  - family-names: Chen
+    given-names: Jinhao
+  - family-names: Ye
+    given-names: Yuanxin
+repository-code: "https://github.com/yeyuanxin110/VMGGA"
+preferred-citation:
+  type: article
+  title: "Robust Detector-Free Multimodal Image Matching Based on Visual Model Guidance and Gated Attention"
+  authors:
+    - family-names: Tang
+      given-names: Tengfeng
+    - family-names: Han
+      given-names: Zhiqiang
+    - family-names: Peng
+      given-names: Tao
+    - family-names: Chen
+      given-names: Jinhao
+    - family-names: Ye
+      given-names: Yuanxin
+  journal: "ISPRS Journal of Photogrammetry and Remote Sensing"
+  volume: 238
+  start: 484
+  end: 496
+  year: 2026
+  doi: "10.1016/j.isprsjprs.2026.05.005"
