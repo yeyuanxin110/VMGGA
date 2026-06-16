@@ -63,20 +63,21 @@ assets/results_optical_depth.png
 下载对应权重后，按照下表文件名放入 `weights/`。每个 VMGGA 权重均包含完整
 推理模型参数，推理时不需要额外加载独立的 DINOv3 初始化权重。
 
-| 模态 | 文件名 | 谷歌云盘 | 百度网盘 |
-|---|---|---|---|
-| 光学-红外 | `vmgga_optical_infrared.pth` | 待更新 | 待更新 |
-| 光学-SAR | `vmgga_optical_sar.pth` | 待更新 | 待更新 |
-| 光学-地图 | `vmgga_optical_map.pth` | 待更新 | 待更新 |
-| 光学-深度 | `vmgga_optical_depth.pth` | 待更新 | 待更新 |
+| 模态 | 文件名 | 谷歌云盘 | 百度网盘         |
+|---|---|---|--------------|
+| 光学-红外 | `vmgga_optical_infrared.pth` | 待更新 | [[百度网盘链接]](https://pan.baidu.com/s/15bRXjeRvDZEGtVCthVKivA?pwd=w9nz) |
+| 光学-SAR | `vmgga_optical_sar.pth` | 待更新 | 待更新          |
+| 光学-地图 | `vmgga_optical_map.pth` | 待更新 | 待更新          |
+| 光学-深度 | `vmgga_optical_depth.pth` | 待更新 | 待更新          |
+
 
 ## 数据集
 
 论文中使用的自制 VMGGA-Opt-Map 数据集将通过外部网盘链接提供。
 
-| 数据集           | 说明             | 谷歌云盘 | 百度网盘 |
-|---------------|----------------|---|---|
-| VMGGA-Opt-Map | 光学卫星影像与栅格地图图像对 | 待更新 | 待更新 |
+| 数据集           | 说明             | 谷歌云盘                                                                                         | 百度网盘                                                      |
+|---------------|----------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| VMGGA-Opt-Map | 光学卫星影像与栅格地图图像对 |[[谷歌云盘链接]](https://drive.google.com/file/d/1i1YBPVZEp4QVVslDBRkZSd5NqO18r4FP/view?usp=sharing)|[[百度网盘链接]](https://pan.baidu.com/s/12QzsTaHCWXmIRi4ZLaTlvA?pwd=55ht)|
 
 ## 环境安装
 

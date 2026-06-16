@@ -62,7 +62,7 @@ assets/results_optical_depth.png
 
 | Optical-Map | Optical-Depth |
 |:---:|:---:|
-| ![Optical-map matching result](assets/result_opt_map.png)<br>Reference image: VMGGA-Opt-Map/map/109747_53549.jpg<br>Sensed image: VMGGA-Opt-Map/opt/109747_53549.jpg<br>Simulated transformation: rotation -15 degrees, scale 1.1<br>Inliers / correct matches: 216 / 203 | ![Optical-depth matching result](assets/result_opt_dep_1.png)<br>Reference image: NYU-DEPTH-V2/depth/1340.jpg<br>Sensed image: NYU-DEPTH-V2/opt/1340.jpg<br>Simulated transformation: rotation 10 degrees, scale 1.1, x-perspective contraction 1e-5<br>Inliers / correct matches: 230 / 227 |
+| ![Optical-map matching result](assets/result_opt_map.png)<br>Reference image: VMGGA-Opt-Map/map/109747_53549.jpg<br>Sensed image: VMGGA-Opt-Map/opt/109747_53549.jpg<br>Simulated transformation: rotation -15 degrees, scale 1.1<br>Inliers / correct matches: 216 / 227 | ![Optical-depth matching result](assets/result_opt_dep_1.png)<br>Reference image: NYU-DEPTH-V2/depth/1340.jpg<br>Sensed image: NYU-DEPTH-V2/opt/1340.jpg<br>Simulated transformation: rotation 10 degrees, scale 1.1, x-perspective contraction 1e-5<br>Inliers / correct matches: 230 / 227 |
 
 ## Model Zoo
 
@@ -72,7 +72,7 @@ DINOv3 initialization checkpoint is not required for inference.
 
 | Modality | Filename | Google Drive | Baidu Netdisk |
 |---|---|---|---|
-| Optical-Infrared | `vmgga_optical_infrared.pth` | TBA | TBA |
+| Optical-Infrared | `vmgga_optical_infrared.pth` | TBA | [[Baidu Netdisk]](https://pan.baidu.com/s/15bRXjeRvDZEGtVCthVKivA?pwd=w9nz) |
 | Optical-SAR | `vmgga_optical_sar.pth` | TBA | TBA |
 | Optical-Map | `vmgga_optical_map.pth` | TBA | TBA |
 | Optical-Depth | `vmgga_optical_depth.pth` | TBA | TBA |
@@ -84,7 +84,7 @@ external cloud storage links.
 
 | Dataset | Description                                        | Google Drive | Baidu Netdisk |
 |---|----------------------------------------------------|---|---|
-| VMGGA-Opt-Map | Optical satellite image and raster map image pairs | TBA | TBA |
+| VMGGA-Opt-Map | Optical satellite image and raster map image pairs | [[Google Drive]](https://drive.google.com/file/d/1i1YBPVZEp4QVVslDBRkZSd5NqO18r4FP/view?usp=sharing) | [[Baidu Netdisk]](https://pan.baidu.com/s/12QzsTaHCWXmIRi4ZLaTlvA?pwd=55ht) |
 
 ## Installation
 
