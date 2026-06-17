@@ -1,0 +1,19 @@
+name: optical_map
+weight_path: weight/vmgga_optical_map.pth
+
+model:
+  match_threshold: 0.00002
+  fine_window_size: 5
+
+eval:
+  ransac_threshold: 2.0
+  inference_border: 0
+
+demo:
+  output: demo_result/optical_map_matches.png
+  correct_threshold: 5.0
+  display_border: 255
+  max_matches: 0
+  correct_line_thickness: 1
+  incorrect_line_thickness: 1
+  point_radius: 2

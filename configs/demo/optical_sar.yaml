@@ -1,0 +1,19 @@
+name: optical_sar
+weight_path: weight/vmgga_optical_sar.pth
+
+model:
+  match_threshold: 0.00002
+  fine_window_size: 5
+
+eval:
+  ransac_threshold: 2.0
+  inference_border: 0
+
+demo:
+  output: demo_result/optical_sar_matches.png
+  correct_threshold: 5.0
+  display_border: 255
+  max_matches: 0
+  correct_line_thickness: 1
+  incorrect_line_thickness: 1
+  point_radius: 2
