@@ -73,9 +73,9 @@ DINOv3 initialization checkpoint is not required for inference.
 | Modality | Filename | Google Drive | Baidu Netdisk |
 |---|---|---|---|
 | Optical-Infrared | `vmgga_optical_infrared.pth` | TBA | [[Baidu Netdisk]](https://pan.baidu.com/s/15bRXjeRvDZEGtVCthVKivA?pwd=w9nz) |
-| Optical-SAR | `vmgga_optical_sar.pth` | TBA | TBA |
-| Optical-Map | `vmgga_optical_map.pth` | TBA | TBA |
-| Optical-Depth | `vmgga_optical_depth.pth` | TBA | TBA |
+| Optical-SAR | `vmgga_optical_sar.pth` | TBA | [[Baidu Netdisk]](https://pan.baidu.com/s/1udp4OAzw_EL9QEI3FyG4Wg?pwd=bf8d) |
+| Optical-Map | `vmgga_optical_map.pth` | TBA | [[Baidu Netdisk]](https://pan.baidu.com/s/1glLw0G4QgQMEN0KoABVlMQ?pwd=3arf) |
+| Optical-Depth | `vmgga_optical_depth.pth` | TBA | [[Baidu Netdisk]](https://pan.baidu.com/s/1UEvwXzfVZRlh-hrUC-WzMQ?pwd=dbff) |
 
 ## Dataset
 

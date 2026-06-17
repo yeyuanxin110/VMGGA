@@ -60,16 +60,15 @@ assets/results_optical_depth.png
 
 ## 模型权重
 
-下载对应权重后，按照下表文件名放入 `weights/`。每个 VMGGA 权重均包含完整
+下载对应权重后，按照下表文件名放入 `weight/`。每个 VMGGA 权重均包含完整
 推理模型参数，推理时不需要额外加载独立的 DINOv3 初始化权重。
 
-| 模态 | 文件名 | 谷歌云盘 | 百度网盘         |
-|---|---|---|--------------|
+| 模态 | 文件名 | 谷歌云盘 | 百度网盘                                                                 |
+|---|---|---|----------------------------------------------------------------------|
 | 光学-红外 | `vmgga_optical_infrared.pth` | 待更新 | [[百度网盘链接]](https://pan.baidu.com/s/15bRXjeRvDZEGtVCthVKivA?pwd=w9nz) |
-| 光学-SAR | `vmgga_optical_sar.pth` | 待更新 | 待更新          |
-| 光学-地图 | `vmgga_optical_map.pth` | 待更新 | 待更新          |
-| 光学-深度 | `vmgga_optical_depth.pth` | 待更新 | 待更新          |
-
+| 光学-SAR | `vmgga_optical_sar.pth` | 待更新 | [[百度网盘链接]](https://pan.baidu.com/s/1udp4OAzw_EL9QEI3FyG4Wg?pwd=bf8d) |
+| 光学-地图 | `vmgga_optical_map.pth` | 待更新 | [[百度网盘链接]](https://pan.baidu.com/s/1glLw0G4QgQMEN0KoABVlMQ?pwd=3arf) |
+| 光学-深度 | `vmgga_optical_depth.pth` | 待更新 | [[百度网盘链接]](https://pan.baidu.com/s/1UEvwXzfVZRlh-hrUC-WzMQ?pwd=dbff) |
 
 ## 数据集
 
@@ -106,7 +105,7 @@ einops 0.8.1、Kornia 0.8.1 和 pydegensac 环境中测试。
 
 **第一步 — 下载模型权重**
 
-从上方模型权重表格中选择目标模态，下载对应的 `.pth` 文件并放入 `weights/`。
+从上方模型权重表格中选择目标模态，下载对应的 `.pth` 文件并放入 `weight/`。
 
 **第二步 — （可选）准备自己的图像**
 
@@ -175,7 +174,7 @@ VMGGA/
 │   ├── config/             # 模型构建代码
 │   ├── utils/              # 图像几何变换工具
 │   └── vmgga/              # VMGGA 网络
-├── weights/                # 下载的模型权重，不提交至 Git
+├── weight/                # 下载的模型权重，不提交至 Git
 ├── demo_vmgga.py
 ├── requirements.txt
 └── README.md
